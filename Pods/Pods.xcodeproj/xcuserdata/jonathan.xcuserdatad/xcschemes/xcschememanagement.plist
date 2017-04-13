@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>IQKeyboardManagerSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Material-io.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,17 +82,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>143EF70D093A63DF8E9A6BA2E496060B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>14899DD2DE4794A659D6E3A53A2FE532</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D30789340FDCE5366C65054AD48EAEA</key>
+		<key>1520003FEBEC114D6C84F832AFEDB994</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>17992E71B7E10A2A9DE453CA87583F89</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2FC56678CEBC4F0694DAB20263874BEF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -97,7 +107,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4BB17E49DAA91397A533D392D98EDA20</key>
+		<key>6E06D41CCCE88D64B5AF7A9C87282BC3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

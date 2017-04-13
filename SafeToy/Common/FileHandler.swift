@@ -18,5 +18,15 @@ class FileHandler {
         fileManager.createFile(atPath: paths as String, contents: data, attributes: nil)
     }
     
+    func createDirectory(path:String){
+        let fileManager = FileManager.default
+        let paths = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent(path)
+        if !fileManager.fileExists(atPath: paths){
+            try! fileManager.createDirectory(atPath: paths, withIntermediateDirectories: true, attributes: nil)
+        }else{
+            print("Already dictionary created.")
+        }
+    }
+    
 }
 
