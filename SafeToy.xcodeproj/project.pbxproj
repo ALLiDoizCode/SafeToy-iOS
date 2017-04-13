@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3FC80D2E4DB7110A83F66A98 /* Pods_SafeToy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24A04CDF8A55A2BBE3DE7BB /* Pods_SafeToy.framework */; };
+		AB463EFA1E9FB2520005BD92 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463EF91E9FB2520005BD92 /* ListViewController.swift */; };
+		AB463EFD1E9FB2F40005BD92 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463EFC1E9FB2F40005BD92 /* ListTableViewCell.swift */; };
 		AB734CA61E9F2009003C54E1 /* AWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB734CA51E9F2009003C54E1 /* AWSClient.swift */; };
 		AB734CA91E9F20F4003C54E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB734CA81E9F20F4003C54E1 /* Constants.swift */; };
 		AB734CAB1E9F21A1003C54E1 /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB734CAA1E9F21A1003C54E1 /* FileHandler.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		452F0D2E7DA9ACA6AC178B0C /* Pods-SafeToy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeToy.release.xcconfig"; path = "Pods/Target Support Files/Pods-SafeToy/Pods-SafeToy.release.xcconfig"; sourceTree = "<group>"; };
 		83F72030CEE37BD7D2441F2B /* Pods-SafeToy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeToy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeToy/Pods-SafeToy.debug.xcconfig"; sourceTree = "<group>"; };
+		AB463EF91E9FB2520005BD92 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		AB463EFC1E9FB2F40005BD92 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		AB734CA51E9F2009003C54E1 /* AWSClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSClient.swift; sourceTree = "<group>"; };
 		AB734CA81E9F20F4003C54E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB734CAA1E9F21A1003C54E1 /* FileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -62,6 +66,14 @@
 				F24A04CDF8A55A2BBE3DE7BB /* Pods_SafeToy.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB463EFB1E9FB2CF0005BD92 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AB463EFC1E9FB2F40005BD92 /* ListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AB734CA21E9F1F89003C54E1 /* Client */ = {
@@ -104,6 +116,7 @@
 			children = (
 				AB734CAD1E9F23A4003C54E1 /* AddImageViewController.swift */,
 				AB734CB31E9F390A003C54E1 /* DescriptionViewController.swift */,
+				AB463EF91E9FB2520005BD92 /* ListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +142,7 @@
 		AB91268A1E9EEDA10037799E /* SafeToy */ = {
 			isa = PBXGroup;
 			children = (
+				AB463EFB1E9FB2CF0005BD92 /* Cells */,
 				AB734CAC1E9F2380003C54E1 /* Controllers */,
 				AB734CA71E9F20D4003C54E1 /* Common */,
 				AB734CA41E9F1FD6003C54E1 /* Models */,
@@ -281,6 +295,8 @@
 				AB734CBC1E9F4CF2003C54E1 /* Client.swift in Sources */,
 				AB91268C1E9EEDA10037799E /* AppDelegate.swift in Sources */,
 				AB734CA61E9F2009003C54E1 /* AWSClient.swift in Sources */,
+				AB463EFD1E9FB2F40005BD92 /* ListTableViewCell.swift in Sources */,
+				AB463EFA1E9FB2520005BD92 /* ListViewController.swift in Sources */,
 				AB734CB81E9F473A003C54E1 /* DataStore.swift in Sources */,
 				AB734CAE1E9F23A4003C54E1 /* AddImageViewController.swift in Sources */,
 				AB734CAB1E9F21A1003C54E1 /* FileHandler.swift in Sources */,
