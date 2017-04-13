@@ -1,0 +1,37 @@
+PODS:
+  - Alamofire (4.3.0)
+  - AWSCore (2.5.0)
+  - AWSS3 (2.5.0):
+    - AWSCore (= 2.5.0)
+  - Material (2.4.11):
+    - Material/Core (= 2.4.11)
+  - Material/Core (2.4.11)
+  - NVActivityIndicatorView (3.2)
+  - Player (0.2.2)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SwiftyJSON (3.1.4)
+
+DEPENDENCIES:
+  - Alamofire
+  - AWSS3
+  - Material (~> 2.2)
+  - NVActivityIndicatorView
+  - Player (~> 0.2.0)
+  - SDWebImage (~> 4.0.0)
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AWSCore: e9839d27ceaa2db75934a9c418630ce63c23e347
+  AWSS3: 3678dd99006ff77c825fb857fc7cbaca0db848c6
+  Material: 09b50565d8f824bd74881eba12d7c549b41f510d
+  NVActivityIndicatorView: 28942c18ced111a6a3ce5e6f5b27d9d40116d639
+  Player: 5cff076cc9f13b51f56b6fb7bed24431569b8102
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+
+PODFILE CHECKSUM: 2318dce426c0266a48f96453cf9382c5c34c744c
+
+COCOAPODS: 1.1.1

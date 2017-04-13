@@ -1,0 +1,6 @@
+framework module Pods_SafeToy {
+  umbrella header "Pods-SafeToy-umbrella.h"
+
+  export *
+  module * { export * }
+}
