@@ -8,8 +8,10 @@
 
 import UIKit
 import Material
+import SDWebImage
+import NVActivityIndicatorView
 
-class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ListViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,NVActivityIndicatorViewable {
     
     var tableView:UITableView!
 
@@ -17,6 +19,15 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        startAnimating(self.view.frame.size, type: .ballScale , color: Color.teal.darken1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
+        
+        Presenter().getToys { (success) in
+            
+            self.tableView.reloadData()
+            self.stopAnimating()
+        }
+        
         self.navigationController?.isNavigationBarHidden = true
         tableView = UITableView(frame: self.view.frame, style: .grouped)
         self.view.addSubview(tableView)
@@ -24,25 +35,12 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.dataSource = self
         tableView.register(ListTableViewCell.self, forCellReuseIdentifier: "list")
         tableView.separatorStyle = .none
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 0).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: self.tabBar.topAnchor, constant: 0).isActive = true
+        tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
+        tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
         
-        for i in 1..<4{
-            
-            let image = "toy\(i)"
-            
-            if i == 3 {
-                
-                 let newToy = ToyModel(name: "Toy \(i)", description: "adnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufhadnhahdaklfhausadsadasdhfauifhuifhiufh", image: image)
-                
-                toyList.append(newToy)
-                
-            }else {
-                
-                 let newToy = ToyModel(name: "Toy \(i)", description: "adnhahdaklfhauhfauifhuifhiufh", image: image)
-                
-                toyList.append(newToy)
-            }
-        }
-
         // Do any additional setup after loading the view.
     }
 
@@ -53,7 +51,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return toyList.count
+        return DataStore().getToyList().count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -78,11 +76,11 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "list", for: indexPath) as! ListTableViewCell
         
-        let image = UIImage(named: toyList[indexPath.row].image)
+        let image = URL(string: DataStore().getToyList()[indexPath.row].image)
         
-        cell.toyImage.image = image
-        cell.toyName.text = toyList[indexPath.row].name
-        cell.descriptionLabel.text = toyList[indexPath.row].description
+        cell.toyImage.sd_setImage(with: image)
+        cell.toyName.text = DataStore().getToyList()[indexPath.row].name
+        cell.descriptionLabel.text = DataStore().getToyList()[indexPath.row].description
         cell.selectionStyle = .none
         
         return cell

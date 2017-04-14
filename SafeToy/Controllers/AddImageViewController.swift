@@ -9,7 +9,7 @@
 import UIKit
 import Material
 
-class AddImageViewController: UIViewController,UIImagePickerControllerDelegate,
+class AddImageViewController: BaseViewController,UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
     
     var previewView = UIImageView()
@@ -19,6 +19,7 @@ UINavigationControllerDelegate {
     var nextBtnPosition:NSLayoutConstraint!
     let picker = UIImagePickerController()
     var media:Data!
+    var backButton = FlatButton()
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ UINavigationControllerDelegate {
         self.view.addSubview(cameraBtn)
         self.view.addSubview(albumBtn)
         self.view.addSubview(nextBtn)
+        self.view.addSubview(backButton)
         
         self.navigationController?.isNavigationBarHidden = true
         
@@ -46,6 +48,10 @@ UINavigationControllerDelegate {
     }
     
     func setup(){
+        
+        backButton.image = UIImage(named: "back")
+        backButton.imageView?.contentMode = .scaleAspectFill
+        backButton.addTarget(self, action: #selector(AddImageViewController.back), for: .touchUpInside)
         
         let image = UIImage(named: "default")
         previewView.image = image
@@ -102,6 +108,19 @@ UINavigationControllerDelegate {
         nextBtn.rightAnchor.constraint(equalTo: cameraBtn.rightAnchor, constant: 0).isActive = true
         nextBtn.leftAnchor.constraint(equalTo: albumBtn.leftAnchor, constant: 0).isActive = true
         nextBtn.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.09).isActive = true
+        
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        backButton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+        backButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20).isActive = true
+        backButton.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.1).isActive = true
+        backButton.heightAnchor.constraint(equalTo: backButton.widthAnchor, multiplier: 1).isActive = true
+    }
+    
+    func back(){
+        
+        let controller = ListViewController()
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func fromAlbum(){

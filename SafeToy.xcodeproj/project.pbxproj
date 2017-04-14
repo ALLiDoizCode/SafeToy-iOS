@@ -10,6 +10,9 @@
 		3FC80D2E4DB7110A83F66A98 /* Pods_SafeToy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F24A04CDF8A55A2BBE3DE7BB /* Pods_SafeToy.framework */; };
 		AB463EFA1E9FB2520005BD92 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463EF91E9FB2520005BD92 /* ListViewController.swift */; };
 		AB463EFD1E9FB2F40005BD92 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463EFC1E9FB2F40005BD92 /* ListTableViewCell.swift */; };
+		AB463EFF1E9FC16B0005BD92 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463EFE1E9FC16B0005BD92 /* BaseViewController.swift */; };
+		AB463F041E9FC1D70005BD92 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463F021E9FC1D70005BD92 /* TabBar.swift */; };
+		AB463F051E9FC1D70005BD92 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB463F031E9FC1D70005BD92 /* IconView.swift */; };
 		AB734CA61E9F2009003C54E1 /* AWSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB734CA51E9F2009003C54E1 /* AWSClient.swift */; };
 		AB734CA91E9F20F4003C54E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB734CA81E9F20F4003C54E1 /* Constants.swift */; };
 		AB734CAB1E9F21A1003C54E1 /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB734CAA1E9F21A1003C54E1 /* FileHandler.swift */; };
@@ -30,6 +33,9 @@
 		83F72030CEE37BD7D2441F2B /* Pods-SafeToy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeToy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SafeToy/Pods-SafeToy.debug.xcconfig"; sourceTree = "<group>"; };
 		AB463EF91E9FB2520005BD92 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		AB463EFC1E9FB2F40005BD92 /* ListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		AB463EFE1E9FC16B0005BD92 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		AB463F021E9FC1D70005BD92 /* TabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		AB463F031E9FC1D70005BD92 /* IconView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		AB734CA51E9F2009003C54E1 /* AWSClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AWSClient.swift; sourceTree = "<group>"; };
 		AB734CA81E9F20F4003C54E1 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB734CAA1E9F21A1003C54E1 /* FileHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
@@ -76,6 +82,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		AB463F001E9FC1BE0005BD92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AB463F021E9FC1D70005BD92 /* TabBar.swift */,
+				AB463F031E9FC1D70005BD92 /* IconView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AB734CA21E9F1F89003C54E1 /* Client */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +132,7 @@
 				AB734CAD1E9F23A4003C54E1 /* AddImageViewController.swift */,
 				AB734CB31E9F390A003C54E1 /* DescriptionViewController.swift */,
 				AB463EF91E9FB2520005BD92 /* ListViewController.swift */,
+				AB463EFE1E9FC16B0005BD92 /* BaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,6 +158,7 @@
 		AB91268A1E9EEDA10037799E /* SafeToy */ = {
 			isa = PBXGroup;
 			children = (
+				AB463F001E9FC1BE0005BD92 /* Views */,
 				AB463EFB1E9FB2CF0005BD92 /* Cells */,
 				AB734CAC1E9F2380003C54E1 /* Controllers */,
 				AB734CA71E9F20D4003C54E1 /* Common */,
@@ -290,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB463EFF1E9FC16B0005BD92 /* BaseViewController.swift in Sources */,
 				AB734CB61E9F4186003C54E1 /* ToyModel.swift in Sources */,
 				AB734CBA1E9F4AA9003C54E1 /* Presenter.swift in Sources */,
 				AB734CBC1E9F4CF2003C54E1 /* Client.swift in Sources */,
@@ -299,9 +317,11 @@
 				AB463EFA1E9FB2520005BD92 /* ListViewController.swift in Sources */,
 				AB734CB81E9F473A003C54E1 /* DataStore.swift in Sources */,
 				AB734CAE1E9F23A4003C54E1 /* AddImageViewController.swift in Sources */,
+				AB463F051E9FC1D70005BD92 /* IconView.swift in Sources */,
 				AB734CAB1E9F21A1003C54E1 /* FileHandler.swift in Sources */,
 				AB734CA91E9F20F4003C54E1 /* Constants.swift in Sources */,
 				AB734CB41E9F390A003C54E1 /* DescriptionViewController.swift in Sources */,
+				AB463F041E9FC1D70005BD92 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

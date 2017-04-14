@@ -12,6 +12,18 @@ class DataStore {
     
     static var currentToy:ToyModel!
     static var toyList:[ToyModel] = []
+    static var limit:Int = 20
+    static var skip:Int = 0
+    
+    func getLimit() -> Int {
+        
+        return DataStore.limit
+    }
+    
+    func getSkip() -> Int {
+        
+        return DataStore.skip
+    }
     
     func getToy() -> ToyModel {
         
@@ -28,11 +40,18 @@ class DataStore {
         currentToy = toy
     }
     
-    static func setToyList(toys:[ToyModel]){
+    static func setLimit(limit:Int){
         
-        for toy in toys {
-            
-            toyList.append(toy)
-        }
+        self.limit = limit
+    }
+    
+    static func setSkip(skip:Int){
+        
+        self.skip = skip
+    }
+    
+    static func setToyList(toy:ToyModel){
+        
+        toyList.append(toy)
     }
 }
