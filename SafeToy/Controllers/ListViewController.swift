@@ -22,12 +22,6 @@ class ListViewController: BaseViewController,UITableViewDelegate,UITableViewData
         
         startAnimating(self.view.frame.size, type: .ballScale , color: Color.teal.darken1, padding: 0, displayTimeThreshold: 0, minimumDisplayTime: 0, backgroundColor: Color.black.withAlphaComponent(0.6))
         
-        Presenter().getToys { (success) in
-            
-            self.tableView.reloadData()
-            self.stopAnimating()
-        }
-        
         self.navigationController?.isNavigationBarHidden = true
         tableView = UITableView(frame: self.view.frame, style: .grouped)
         self.view.addSubview(tableView)
@@ -40,6 +34,20 @@ class ListViewController: BaseViewController,UITableViewDelegate,UITableViewData
         tableView.bottomAnchor.constraint(equalTo: self.tabBar.topAnchor, constant: 0).isActive = true
         tableView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 0).isActive = true
         tableView.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: 0).isActive = true
+        
+        guard DataStore().getToyList().count == 0 else {
+            
+            self.tableView.reloadData()
+            self.stopAnimating()
+            
+            return
+        }
+        
+        Presenter().getToys { (success) in
+            
+            self.tableView.reloadData()
+            self.stopAnimating()
+        }
         
         // Do any additional setup after loading the view.
     }

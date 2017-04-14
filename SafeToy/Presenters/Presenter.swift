@@ -12,23 +12,35 @@ class Presenter {
     
     func getToys(completion:@escaping (_ success:Bool) -> Void){
         
-        Client().getToys(limit: DataStore().getLimit(), skip: DataStore().getSkip()) { (success) in
+        DispatchQueue.global(qos: .userInitiated).async {
+        
+            Client().getToys(limit: DataStore().getLimit(), skip: DataStore().getSkip()) { (success) in
+                
+                DispatchQueue.main.async {
+                    
+                    completion(success)
+                }
+            }
             
-            completion(success)
         }
     }
     
     func saveToy(toy:ToyModel,path:String,content:String,completion:@escaping (_ success:Bool) -> Void){
-    
-        AWSClient().upload(path: path,content:content) { (url) in
+        
+        DispatchQueue.global(qos: .userInitiated).async {
             
-            toy.image = url
-            
-            Client().newToy(toy: toy, completion: { (success) in
+            AWSClient().upload(path: path,content:content) { (url) in
                 
-                completion(success)
+                toy.image = url
                 
-            })
+                Client().newToy(toy: toy, completion: { (success) in
+                    
+                    DispatchQueue.main.async {
+                    
+                        completion(success)
+                    }
+                })
+            }
         }
     }
 }
