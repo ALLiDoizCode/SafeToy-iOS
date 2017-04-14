@@ -129,15 +129,20 @@ class DescriptionViewController: UIViewController,NVActivityIndicatorViewable {
         
         Presenter().saveToy(toy: newToy, path: path,content:content) { (success) in
             
-            self.stopAnimating()
-            
             guard success == true else {
                 
+                self.stopAnimating()
                 return
             }
             
-            let controller = ListViewController()
-            self.navigationController?.pushViewController(controller, animated: true)
+            Presenter().getToys { (success) in
+                
+                self.stopAnimating()
+                let controller = ListViewController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+            
+            
         }
     }
     
